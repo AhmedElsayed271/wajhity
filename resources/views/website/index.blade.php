@@ -22,92 +22,8 @@
 </head>
 
 <body>
-    <!-- strat header -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fs-2 fw-bold text-white" href="index.html" data-translate="Wejhatee">Wejhatee</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars fs-2 text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Home" aria-current="page"
-                            href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="TouristPalces" aria-current="page"
-                            href="#TouristPalces">TouristPalces</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Services" aria-current="page"
-                            href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Reviews" aria-current="page"
-                            href="#Reviews">Reviews</a>
-                    </li>
-                </ul>
-                <select class="form-select mx-lg-3" id="language-selector">
-                    <option value="en">English</option>
-                    <option value="ar">العربيه</option>
-                </select>
-                <div class="register d-flex mt-2">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-user text-white fs-3"></i>
-                    </div>
-                    <div class="pages d-flex justify-content-start align-items-center">
-                        <div class="signinitem">
-                            <a href="#">
-                                <p class="text-white px-1 mx-lg-1" data-translate="login" id="login">login </p>
-                            </a>
-                            <div class="signinform mt-2 appearform leftdir" id="signinform">
-                                <form method="POST" action="{{ route('login.user') }}" id="form1">
-                                    @csrf
-                                    <div class="mb-3 row">
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="Emailpassword" name="email"
-                                                placeholder="Email" form="form1">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3 row">
-                                        <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword"
-                                                name="password" placeholder="Password" form="form1">
-                                        </div>
-                                    </div>
-                                    <div class="col-auto text-center">
-                                        <button type="submit" class="btn btn-primary mb-3" id="SigninBtn"
-                                            data-translate="login" form="form1">Sign in</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                            <div class="signupitem">
-                                <a href="{{ route('register.page') }}">
-                                    <p class="text-white px-1 mx-lg-1" data-translate="register">register</p>
-                                </a>
-                            </div>
-
-                        <div class="logout">
-
-                            @auth
-                                <form method="POST" action="{{ route('logout.user') }}" id="logout">
-                                    @csrf
-                                    <button type=submit form="logout" type="button"
-                                        class="btn btn-primary">logout</button>
-                                </form>
-                            @endauth
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- end header -->
+    {{-- header --}}
+    @include('website.includes.header')
     <!-- start main -->
     <main class="hero d-flex justify-content-center align-items-center">
         <div class="textinfo text-center">
@@ -130,7 +46,7 @@
                 <div class="card col-12 col-sm-6 col-md-4 my-4 mx-2 item ">
                     <img src="{{ asset('assets/images/salalah.AVIF') }}" class="card-img-top" alt="SalalahImg">
                     <div class="card-body">
-                        <a href="Salalah.html">
+                        <a href="{{ route('salalah') }}">
                             <h3 class="card-title card_description" data-translate="loc7">Salalah</h3>
                         </a>
                         <p class="card-text fs-5" data-translate="title7">
@@ -143,7 +59,7 @@
                 <div class="card col-12 col-sm-6 col-md-4 my-4 mx-2 item">
                     <img src="{{ asset('assets/images/duqm.AVIF') }}" class="card-img-top" alt="duqmImg">
                     <div class="card-body">
-                        <a href="Duqm.html">
+                        <a href="{{ route('Duqm') }}">
                             <h3 class="card-title card_description" data-translate="loc8">Duqm</h3>
                         </a>
                         <p class="card-text fs-5" data-translate="title8">
@@ -157,7 +73,7 @@
                 <div class="card col-12 col-sm-6 col-md-4 my-4 mx-2 item">
                     <img src="{{ asset('assets/images/nzwyimg.AVIF') }}" class="card-img-top" alt="nzwyimg">
                     <div class="card-body">
-                        <a href="Nizwa.html">
+                        <a href="{{ route('nizwa') }}">
                             <h3 class="card-title card_description" data-translate="loc9">Nizwa city</h3>
                         </a>
                         <p class="card-text fs-5" data-translate="title9">
@@ -171,7 +87,7 @@
                 <div class="card col-12 col-sm-6 col-md-4 my-4 mx-2 item">
                     <img src="{{ asset('assets/images/surimage.AVIF') }}" class="card-img-top" alt="surimage">
                     <div class="card-body">
-                        <a href="sur.html">
+                        <a href="{{ route('sur') }}">
                             <h3 class="card-title card_description" data-translate="loc10">Sur city</h3>
                         </a>
                         <p class="card-text fs-5" data-translate="title10">

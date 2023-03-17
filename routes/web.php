@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\UserLoginController;
 
 /*
@@ -17,6 +18,10 @@ use App\Http\Controllers\UserLoginController;
 route::group(['middleware' => 'auth'], function () {
     
     route::post('user-logout', [UserLoginController::class, "logout" ])->name('logout.user');
+    Route::get('/Duqm', [WebsiteController::class, "DuqmPage"])->name('Duqm');
+    Route::get('/salalah', [WebsiteController::class, "salalahPage"])->name('salalah');
+    Route::get('/nizwa', [WebsiteController::class, "nizwaPage"])->name('nizwa');
+    Route::get('/sur', [WebsiteController::class, "surPage"])->name('sur');
 });
 route::group(['middleware' => 'guest'], function () {
    
@@ -29,9 +34,8 @@ route::group(['middleware' => 'guest'], function () {
     
 });
 
-Route::get('/', function () {
-    return view('website.index');
-})->name('website');
+Route::get('/', [WebsiteController::class, "websitePage"])->name('website');
+
 
 
 

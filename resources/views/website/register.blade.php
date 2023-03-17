@@ -23,52 +23,7 @@
 
 <body>
     <!-- strat header -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand fs-2 fw-bold text-white" href="index.html" data-translate="Wejhatee">Wejhatee</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars fs-2 text-white"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Home" aria-current="page"
-                            href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="TouristPalces" aria-current="page"
-                            href="#">TouristPalces</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Services" aria-current="page"
-                            href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white fs-4" data-translate="Reviews" aria-current="page"
-                            href="#">Reviews</a>
-                    </li>
-                </ul>
-                <select class="form-select mx-lg-3" id="language-selector">
-                    <option value="en">English</option>
-                    <option value="ar">العربيه</option>
-                </select>
-                <div class="register d-flex mt-2">
-                    <div class="userIcon">
-                        <i class="fa-solid fa-user text-white fs-3"></i>
-                    </div>
-                    <div class="pages d-flex justify-content-start align-items-center">
-                        <div class="signupitem">
-                            <a href="signup.html">
-                                <p class="text-white px-1 mx-lg-1" data-translate="register">register</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    @include('website.includes.header')
     <!-- start signup page -->
     <div class="signupform mt-4 ">
 
